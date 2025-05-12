@@ -1,0 +1,21 @@
+# Carpetas y archivos de construcción
+build/
+dist/
+__pycache__/
+*.spec
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.egg-info/
+.env
+.venv
+venv/
+.DS_Store
+*.swp
+# Archivos temporales de PyInstaller
+*.bak
+# Configuración de usuario
+.web_typer_config.json
+# Archivos de sistema
+Thumbs.db 
