@@ -147,15 +147,75 @@ python main.py
 
 ## Empaquetado
 
-Para crear un ejecutable:
+### Windows
 
-```bash
-# Windows
-pyinstaller --onefile --windowed main.py
+1. Instala PyInstaller:
+   ```cmd
+   pip install pyinstaller
+   ```
+2. Empaqueta tu aplicación (incluyendo la carpeta assets):
 
-# macOS
-pyinstaller --onefile --windowed main.py
-```
+   ```cmd
+   pyinstaller --onefile --windowed --add-data "assets;assets" main.py
+   ```
+
+   - El ejecutable estará en la carpeta `dist/` como `main.exe`.
+
+3. (Opcional) Para crear un instalador profesional, usa [Inno Setup](https://jrsoftware.org/isinfo.php):
+
+   - Descarga e instala Inno Setup.
+   - Usa este script de ejemplo:
+
+     ```iss
+     [Setup]
+     AppName=Automatización Web
+     AppVersion=1.0
+     DefaultDirName={pf}\AutomatizacionWeb
+     DefaultGroupName=Automatización Web
+     OutputDir=dist
+     OutputBaseFilename=InstaladorAutomatizacionWeb
+     Compression=lzma
+     SolidCompression=yes
+
+     [Files]
+     Source: "dist\\main.exe"; DestDir: "{app}"; Flags: ignoreversion
+     Source: "assets\\*"; DestDir: "{app}\\assets"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+     [Icons]
+     Name: "{group}\Automatización Web"; Filename: "{app}\main.exe"
+     ```
+
+   - Compila el script en Inno Setup para obtener un instalador `.exe`.
+
+### macOS
+
+1. Instala PyInstaller:
+   ```bash
+   pip install pyinstaller
+   ```
+2. Empaqueta tu aplicación (incluyendo la carpeta assets):
+
+   ```bash
+   pyinstaller --onefile --windowed --add-data "assets:assets" main.py
+   ```
+
+   - El ejecutable estará en la carpeta `dist/` como `main`.
+
+3. (Opcional) Para crear un instalador `.dmg`:
+   - Instala create-dmg:
+     ```bash
+     brew install create-dmg
+     ```
+   - Crea el DMG:
+     ```bash
+     create-dmg dist/main
+     ```
+
+### Notas importantes
+
+- **Debes generar el ejecutable en el sistema operativo correspondiente** (no se puede crear un `.exe` de Windows en Mac ni un `.app`/`.dmg` de Mac en Windows).
+- El parámetro `--add-data` usa `;` en Windows y `:` en macOS/Linux.
+- El ejecutable es portable y no requiere Python instalado en el equipo del usuario final.
 
 ## Estructura del Proyecto
 

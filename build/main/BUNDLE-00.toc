@@ -1,0 +1,3 @@
+([('main',
+   '/Users/murdok/Documents/proyects/rapifas/tramaco-reception/dist/main',
+   'EXECUTABLE')],)
