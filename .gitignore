@@ -1,0 +1,88 @@
+# Entornos virtuales
+venv/
+.env/
+.envrc
+*.env
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos de Excel y reportes
+*.xlsx
+*.xls
+*.xlsm
+*.xlsb
+*.csv
+reportes/
+
+# Archivos de configuración local
+config.json
+*.local.json
+
+# Archivos de Playwright
+playwright-report/
+test-results/
+.playwright/
+node_modules/
+
+# Archivos de IDE y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+logs/
+log/
+
+# Archivos de sonido (opcional, si quieres versionar los sonidos)
+# sounds/
+
+# Archivos de PyInstaller
+*.spec
+dist/
+build/
+
+# Archivos temporales
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Archivos de caché
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos de sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
